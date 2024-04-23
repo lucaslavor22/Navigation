@@ -1,11 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import {useState} from 'react';
+
 
 export default function About({ navigation }) {
+
+  const [massa, setMassa] = useState('');
+  const [resultado, setResultado] = useState(null)
+
+  const calcularGravidade = () => {
+    const g = 10;
+    const m = parseFloat(setMassa)
+  }
     return (
       <View style={styles.container}>
-        <Text>FIAP Corporation</Text>
-        <Text>Aplicativo de exemplo com duas telas.</Text>
+        <Text>Calcular a lei gravitacional</Text>
+        <Text>Digite a massa do objeto: </Text>
+        <Input></Input>
+        
         <Button
           title="Sair"
           onPress={() => navigation.goBack()}/>
